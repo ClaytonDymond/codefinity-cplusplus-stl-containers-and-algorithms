@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <unordered_set>
+
+std::string remove_duplicates(const std::string& input)
+{
+    // Your code here
+    std::string retString = "";
+    std::unordered_set<char> charsInString;
+
+    for ( char c : input )
+    {
+        if ( charsInString.find(c) == charsInString.end() )
+        {
+            charsInString.insert(c);
+            retString.push_back(c);
+        }
+    }
+
+    return retString;
+}
+
+int main()
+{
+    std::string input = "banana";
+    std::string output = remove_duplicates(input);
+    std::cout << output << std::endl;
+    return 0;
+}
