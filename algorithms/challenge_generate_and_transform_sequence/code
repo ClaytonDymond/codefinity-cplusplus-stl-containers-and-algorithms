@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+
+std::vector<int> generateSequence(int n)
+{
+//    std::srand();
+    std::vector<int> numbers(n);
+    std::generate(numbers.begin(), numbers.end(), [](){return ((std::rand() % 100) + 1);});
+    return numbers;
+}
+
+std::vector<int> squareElements(const std::vector<int>& input)
+{
+    std::vector<int> numbers(input.size());
+    std::transform(input.begin(), input.end(), numbers.begin(), [](int value){return value * value;});
+    return numbers;
+}
+
+int main()
+{
+    std::vector<int> original = generateSequence(10);
+    std::vector<int> squared = squareElements(original);
+    for (int n : original)
+        std::cout << n << std::endl;
+    for (int n : squared)
+        std::cout << n << std::endl;
+    return 0;
+}
