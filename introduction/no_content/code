@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+std::vector<int> createSequence(int n)
+{
+    // Your code here
+    std::vector<int> tempVec(n);
+    for (int i=1; i <= n; i++)
+        tempVec[i-1] = i;
+    return tempVec;
+}
+
+int sumVector(const std::vector<int>& vec)
+{
+    // Your code here
+    int tempValue = 0;
+    for (int i=0; i < vec.size(); i++)
+        tempValue += vec[i];
+    return tempValue;
+}
+
+int main()
+{
+    std::cout << sumVector(createSequence(25)) << std::endl;
+    return 0;
+}
