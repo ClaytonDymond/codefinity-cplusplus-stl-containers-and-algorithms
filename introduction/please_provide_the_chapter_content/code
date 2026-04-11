@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+#include <unordered_set>
+
+std::string remove_duplicates(const std::string& input)
+{
+    // Your code here
+    std::string tempString = input;
+    return tempString;
+}
+
+int main()
+{
+    std::string input = "banana";
+    std::cout << "Input string : " << input << std::endl;
+    std::cout << "Non-duplicate string : " << remove_duplicates(input) << std::endl;
+    return 0;
+}
