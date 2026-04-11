@@ -5,7 +5,16 @@
 std::string remove_duplicates(const std::string& input)
 {
     // Your code here
-    std::string tempString = input;
+    std::string tempString = "";
+    std::unordered_set<char> letterCounts;
+    for (char x : input )
+    {
+        if (letterCounts.find(x) == letterCounts.end())
+        {
+            tempString.push_back(x);
+            letterCounts.insert(x);
+        }
+    }
     return tempString;
 }
 
